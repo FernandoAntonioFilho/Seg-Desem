@@ -1,6 +1,6 @@
-print("=-="*30)
+print("=-=" * 30)
 print("SEGURO-DESEMPREGO")
-print("=-="*30)
+print("=-=" * 30)
 
 nome = input("Insira o seu nome: ")
 
@@ -25,7 +25,6 @@ condicao = int(input('''
 
 '''.format(nome)))
 
-
 if condicao == 1:
 
     regra1 = input('''
@@ -47,17 +46,23 @@ menos 12 meses nos últimos 36 meses que antecedam a data de dispensa.
 
     if regra1 in "Ss":
 
-        contribuicao = input('''
-    
+        contribuicao = int(input('''
+
 Qual o seu tempo de contribuição? :
 
 [1] Vínculo empregatício de no mínimo seis meses e no máximo onze meses, nos últimos trinta e seis meses;
 [2] Vínculo empregatício de no mínimo doze meses e no máximo 23 meses, nos últimos 36 meses;
 [3] Vínculo empregatício de no mínimo 24 meses, nos últimos 36 meses.
-    
-    ''')
 
-        salario = float(input("Salário dos últimos três meses: R$ "))
+    '''))
+
+        if contribuicao == 1:
+            salario1 = float(input("Valor do último salário: R$ "))
+            salario2 = float(input("Valor do penúltimo salário: R$ "))
+            salario3 = float(input("Valor do antepenúltimo salário: R$ "))
+            media = salario1 + salario2 + salario3 / 3
+            print("Teste: {} e parcelas em 3 vezes".format(media))
+
     else:
 
         print("sefodeu")
@@ -65,19 +70,20 @@ Qual o seu tempo de contribuição? :
 elif condicao == 2:
 
     print('''
-    
+
 Estar com o contrato de trabalho suspenso, em conformidade com o disposto em
 convenção ou acordo coletivo, devidamente matriculado em curso ou programa de
 qualificação profissional oferecido pelo empregador. A periodicidade, os valores e a
 quantidade de parcelas são os mesmos do benefício para o trabalhador formal,
 conforme o tempo de duração do curso de qualificação profissional.
-    
+
     ''')
+
 
 elif condicao == 3:
 
     regra3 = input('''
-    
+
 Você se encaixa nestes critérios? [S/N]
 
 - Ter sido dispensado sem justa causa.
@@ -88,7 +94,7 @@ ao requerimento do seguro-desemprego.
 sua família.
 - Não estar em gozo de qualquer benefício previdenciário de prestação continuada,
 com exceção do auxílio-acidente e pensão por morte.
-    
+
     ''')
 
     if regra3 in "Ss":
@@ -110,7 +116,7 @@ com exceção do auxílio-acidente e pensão por morte.
 elif condicao == 4:
 
     regra4 = input('''
-    
+
 Você se encaixa nestes critérios? [S/N]
 
 - Possuir inscrição no INSS como segurado especial.
@@ -124,7 +130,7 @@ que se dedicou à pesca, em caráter ininterrupto, durante o período compreendi
 entre o defeso anterior e o em curso.
 - Não ter vínculo de emprego ou outra relação de trabalho ou outra fonte de renda
 diversa da decorrente da atividade pesqueira.
-    
+
     ''')
 
     if regra4 in "Ss":
@@ -146,14 +152,19 @@ diversa da decorrente da atividade pesqueira.
 elif condicao == 5:
 
     regra5 = input('''
-    
+
  Você se encaixa nestes critérios? [S/N]
-    
+
 - Ter sido comprovadamente resgatado do regime de trabalho forçado ou da condição
 análoga à de escravo em decorrência de ação de fiscalização do MTE.
 - Não estar em gozo de qualquer benefício previdenciário de prestação continuada,
 com exceção do auxílio-acidente e pensão por morte.
 - Não possuir renda própria de qualquer natureza suficiente à sua manutenção e a de
 sua família.
-    
+
     ''')
+
+
+
+
+
